@@ -1,0 +1,111 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  /* animation: App-logo-spin infinite 20s linear; */
+  height: 60px;
+}
+
+/* Text Styles */
+.brandTxt {
+  color: #3fae2a;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.brandBtnTxt {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+/* Button Styles */
+
+.brandBtn {
+  background-color: #3fae2a;
+  height: 40px;
+  color: #ffffff;
+  width: 100%;
+  border: none;
+}
+
+.brandBtnReverse {
+  background-color: #f8f8f8;
+  height: 40px;
+  color: #3fae2a;
+  width: 100%;
+  border: none;
+}
+
+.App-header {
+  background-color: #222;
+  height: 60px;
+  padding: 20px;
+  color: white;
+  text-align: left;
+}
+
+.App-header-container {
+  display: flex;
+}
+
+.App-title {
+  font-size: 1.5em;
+  color: #FFF;
+  font-weight: 200;
+}
+
+.App-title-alt {
+  text-align: left;
+  font-size: 1.5em;
+  color: #777;
+  font-weight: 200;
+  margin-left: 20px;
+}
+
+.product-title {
+  font-weight: 200;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.flex-grid {
+  display: flex;
+  justify-content: center;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.col {
+  flex: 1;
+  justify-content: center;
+}
+
+.row {
+  flex: 1;
+
+}
+
+.box-wrapper {
+  width: 200px;
+  height: 275px;
+  box-shadow: 2px 8px 8px #999;
+  margin: 25px;
+}
+
+.box {
+  background-color: #FFF;
+  width: 200px;
+  padding-top: 50px;
+  border-bottom: 1px solid #e7e7e7;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
