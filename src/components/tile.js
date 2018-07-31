@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { Button, Col, ControlLabel, Form, FormGroup, FormControl, Modal, Row } from 'react-bootstrap';
 import Product from './product';
 
-const yeezy = require('../assets/yeezy.jpg');
-
+// Needs to be a stateful component for unique data per tile
 class Tile extends Component {
   constructor(props){
     super(props);
     this.state = {
       showModal: false,
+      showOptions: false,
       shoe: null,
       form: {}
     };
@@ -19,12 +19,24 @@ class Tile extends Component {
     this.submitProduct = this.submitProduct.bind(this);
   }
 
-  // Opens Modal - done like this to workaround toggle ui bug
+  showOptions() {
+    this.setState({
+      showOptions: true
+    });
+  }
+
+  hideOptions() {
+    if(this.state.showOptions) {
+      this.setState({
+        showOptions: false
+      });
+    }
+  }
+
+  // Opens Modal 
   openModal() {
     if(!this.state.showModal) {
-      this.setState({
-        showModal: true
-      });
+      this.setState({showModal: true});
     }
   }
 
@@ -47,21 +59,23 @@ class Tile extends Component {
     });
   }
 
+  // saves the product to the grid slot
   submitProduct() {
+    this.closeModal();
     this.setState({
       shoe: this.state.form
     });
   }
-
+  // Renders modal - calling from tile makes bootstrap modal toggle glitch so enforceFocus is required
   renderModal() {
     return (
       <Modal show={this.state.showModal} enforceFocus={true} onHide={() => this.closeModal()}>
           <Modal.Header closeButton bsClass="modal-header">
-            <Modal.Title>New Product</Modal.Title>
+            <Modal.Title>New Shoe</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <p>
-              Enter details for your new product.
+              Enter details for your new shoe.
             </p>
             <Form>
               <FormGroup controlId="formControlsSelect">
@@ -149,7 +163,7 @@ class Tile extends Component {
 
   render(){
     return this.state.shoe ? ( 
-      <Button className="tile" onClick={() => this.openModal()}>
+      <Button className="tile" onClick={() => this.showOptions()}>
         <Product prod={this.state.shoe} />
       </Button>
     ) : (
