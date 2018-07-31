@@ -29,6 +29,12 @@
   color: red;
 }
 
+.gridTxt {
+  font-weight: 200;
+  color: #222;
+  font-size: 16px;
+}
+
 /* Button Styles */
 .brandBtn {
   background-color: #3fae2a !important;
@@ -61,12 +67,8 @@
   text-align: left;
 }
 
-.subHeader {
-  flex-direction: row;
-  flex: 1;
-  display: flex;
-  align-items: center;
-  margin-top: 15px;
+.grid {
+  margin-top: 50px;
 }
 
 .subHeader div {
@@ -86,18 +88,16 @@
 }
 
 .App-title-alt {
-  text-align: left;
   font-size: 1.5em;
   color: #777;
   font-weight: 200;
-  margin-left: 20px;
-  margin-top: 0 !important;
-  margin-bottom: 0 !important;
 }
 
 .product-title {
   font-weight: 200;
-  margin: 10px;
+  padding: 10px;
+  font-size: 14px;
+  word-break: break-all;
 }
 
 .App-intro {
@@ -124,6 +124,7 @@
   background-color: #FFF;
   width: 200px;
   padding-top: 20px;
+  word-wrap: break-word;
   /* border-bottom: 1px solid #e7e7e7; */
 }
 
@@ -131,6 +132,25 @@
 .modal-header {
   background-color: #f8f8f8;
   color: #3fae2a;
+}
+
+/* Grid */
+.tile {
+  background: #ffffff;
+  border: 1px solid #e7e7e7;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 34px;
+  height: 200px;
+  margin-right: -1px;
+  margin-top: -1px;
+  padding: 0;
+  text-align: center;
+  width: 200px;
+}
+
+.title:focus {
+  outline: none;
 }
 
 @keyframes App-logo-spin {
