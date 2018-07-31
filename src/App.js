@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
-import './App.css';
+import Header from './components/header';
+import SubHeader from './components/subHeader';
+import ProductGrid from './components/productGrid';
 
-const logo = require('./assets/stockx-homepage-logo-light.svg');
-const shoe = require('./assets/yeezy.jpg');
+const yeezy = require('./assets/yeezy.jpg');
+const jordan = require('./assets/jordan.jpg');
+const af1 = require('./assets/af1.jpeg');
 
 class App extends Component {
   constructor(){
@@ -12,68 +15,49 @@ class App extends Component {
         {
           type: 'shoe',
           brand: 'Adidas',
-          style: 'Yeezy Boost',
-          model: '350 V2 Butter',
+          style: '350 V2 Butter',
+          model: 'Yeezy Boost',
           upcId: 11000,
-          img: shoe
+          img: yeezy
         },
         {
           type: 'shoe',
           brand: 'Jordan',
-          style: 'Jumpman',
-          model: 'Retro',
+          style: 'Retro Low',
+          model: '5',
           upcId: 11001,
-          img: shoe
+          img: jordan
         },
         {
           type: 'shoe',
           brand: 'Nike',
-          style: 'Airforce One',
-          model: 'Special forces',
+          style: 'High Tripe Black',
+          model: 'SF Air Force 1',
           upcId: 11002,
+          img: af1
         }
       ]
     };
+    this.addProduct = this.addProduct.bind(this);
   }
 
-  manageInventory(){
-    alert('Inventory action!');
-  }
-
-  renderProduct(prod, idx) {
-    return (
-      <div idx={idx} className="box-wrapper">
-        <div className="box">
-          <img src={shoe} width="150" />
-        </div>
-        <h3 className="product-title">{`${prod.brand} ${prod.style} ${prod.model}`}</h3>
-        <button className="brandBtnReverse" onClick={() => this.manageInventory()}>
-          <span className="brandTxt">Manage</span>
-        </button>
-      </div>
-    );
+  addProduct(form) {
+    if(true) {
+      let shoes2 = this.state.shoes;
+      shoes2.push(form);
+      this.setState({
+        shoes: [...this.state.shoes]});
+    }
+    
   }
 
   render() {
-    // const { brand, type, model, style, upcId } = this.state.shoes[0];
+    let shoes = this.state.shoes;
     return (
       <div className="App">
-        <header className="App-header">
-          <div className="App-header-container">
-            <img src={logo} className="App-logo" alt="logo" />
-            <h1 className="App-title">Inventory Shelf Management</h1>
-          </div>
-        </header>
-        <h1 className="App-title-alt">Shoes</h1>
-        <div className="flex-grid">
-          <div className="row">
-            {this.state.shoes ? (
-              this.state.shoes.map((prod, idx) => {
-                return this.renderProduct(prod, idx);
-              })
-            ): (null)}
-          </div>
-        </div>
+        <Header/>
+        <SubHeader data={shoes.length} add={this.addProduct}/>
+        <ProductGrid data={shoes}/>
       </div>
     );
   }

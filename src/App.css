@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.brandLink {
+  text-decoration: none;
+  color: #3fae2a;
+}
+
 .App-logo {
   /* animation: App-logo-spin infinite 20s linear; */
   height: 60px;
@@ -20,10 +25,13 @@
   font-size: 14px;
 }
 
-/* Button Styles */
+.errorTxt {
+  color: red;
+}
 
+/* Button Styles */
 .brandBtn {
-  background-color: #3fae2a;
+  background-color: #3fae2a !important;
   height: 40px;
   color: #ffffff;
   width: 100%;
@@ -38,12 +46,33 @@
   border: none;
 }
 
+.brandBtnDark {
+  background-color: #222;
+  height: 40px;
+  color: #3fae2a;
+  width: 100%;
+  border: none;
+}
+
 .App-header {
   background-color: #222;
-  height: 60px;
   padding: 20px;
   color: white;
   text-align: left;
+}
+
+.subHeader {
+  flex-direction: row;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.subHeader div {
+  display: flex;
+  align-items: center;
+  margin: 5px;
 }
 
 .App-header-container {
@@ -62,12 +91,13 @@
   color: #777;
   font-weight: 200;
   margin-left: 20px;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
 }
 
 .product-title {
   font-weight: 200;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin: 10px;
 }
 
 .App-intro {
@@ -77,32 +107,30 @@
 .flex-grid {
   display: flex;
   justify-content: center;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
-.col {
-  flex: 1;
-  justify-content: center;
-}
-
-.row {
-  flex: 1;
-
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .box-wrapper {
   width: 200px;
-  height: 275px;
-  box-shadow: 2px 8px 8px #999;
+  box-shadow: 2px 4px 8px #999;
   margin: 25px;
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
 }
 
 .box {
   background-color: #FFF;
   width: 200px;
-  padding-top: 50px;
-  border-bottom: 1px solid #e7e7e7;
+  padding-top: 20px;
+  /* border-bottom: 1px solid #e7e7e7; */
+}
+
+/* Modals */
+.modal-header {
+  background-color: #f8f8f8;
+  color: #3fae2a;
 }
 
 @keyframes App-logo-spin {
